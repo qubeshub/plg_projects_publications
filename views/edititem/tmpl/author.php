@@ -48,6 +48,7 @@ $lastname = $author->lastName ? htmlspecialchars($author->lastName) : $lastname;
 			<fieldset>
 				<input type="hidden" name="id" value="<?php echo $this->project->get('id'); ?>" />
 				<input type="hidden" name="aid" value="<?php echo $this->row->id; ?>" />
+				<input type="hidden" name="uid" value="<?php echo $this->row->user_id; ?>" />
 				<input type="hidden" name="pid" value="<?php echo $this->pub->id; ?>" />
 				<input type="hidden" name="version" value="<?php echo $this->pub->version_number; ?>" />
 				<input type="hidden" name="p" value="<?php echo $this->props; ?>" />
@@ -95,6 +96,12 @@ $lastname = $author->lastName ? htmlspecialchars($author->lastName) : $lastname;
 						<label for="email">
 							<span class="leftshift faded"><?php echo ucfirst(Lang::txt('PLG_PROJECTS_PUBLICATIONS_AUTHORS_AUTHOR_EMAIL')); ?>:</span>
 							<input type="text" name="email" class="long" value="<?php echo $author->invited_email ? $author->invited_email : ''; ?>" maxlength="255" /><span class="optional"><?php echo Lang::txt('OPTIONAL'); ?></span>
+						</label>
+						<div class="clear"></div>
+					<?php } else { ?>
+						<label for="email">
+							<span class="leftshift faded"><?php echo ucfirst(Lang::txt('PLG_PROJECTS_PUBLICATIONS_AUTHORS_AUTHOR_EMAIL')); ?>:</span>
+							<input type="text" name="email" class="long" value="<?php echo $author->p_email ? $author->p_email : ''; ?>" maxlength="255" /><span class="optional"><?php echo Lang::txt('OPTIONAL'); ?></span>
 						</label>
 						<div class="clear"></div>
 					<?php } ?>
