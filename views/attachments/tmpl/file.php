@@ -37,8 +37,8 @@ if ($data->get('viewer') != 'freeze')
 		<span class="item-order"><?php echo $data->get('ordering'); ?></span>
 		<?php } ?>
 		<span class="item-title" id="<?php echo 'file-'.$data->get('id'); ?>">
-			<?php echo $data::drawIcon($data->get('ext')); ?> <?php echo $data->get('title'); ?>
+			<?php echo $data::drawIcon($data->get('ext')); ?> <?php echo $this->escape($data->get('title')); ?>
 		</span>
-		<span class="item-details"><?php echo $details; ?></span>
+		<span class="item-details"><?php echo $this->escape($details); ?></span>
 		<span class="item-access<?php echo (Component::params('com_publications')->get('instructor_only') ? '' : ' hidden'); ?>"><?php echo $data->get('access') ? Lang::txt('PLG_PROJECTS_PUBLICATIONS_FILE_ACCESS') : ''; ?></span>
 	</li>

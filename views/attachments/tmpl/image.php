@@ -60,6 +60,6 @@ $over  = $data->get('pubThumb') == 1 ? ' title="' . Lang::txt('PLG_PROJECTS_PUBL
 		<span class="item-order"><?php echo $data->get('ordering'); ?></span>
 		<?php } ?>
 		<span class="item-title">
-			<?php echo $data->get('title'); ?></span>
-		<span class="item-details"><?php echo $details; ?></span>
+			<?php echo $this->escape($data->get('title')); ?></span>
+		<span class="item-details"><?php echo $this->escape($details); ?></span>
 	</li>
